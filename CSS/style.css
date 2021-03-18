@@ -1,0 +1,124 @@
+* { box-sizing: border-box; }
+
+html, body{
+    margin: 0;
+
+    padding: 0;
+
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 100%;
+    height: 100%;
+    max-height: 100%;
+
+    font-size: 16px;
+}
+
+body {
+    background-color: hsl(0, 100%, 74%);
+    font-family: 'Poppins', sans-serif;
+    background-image: url(/images/bg-intro-desktop.png);
+    background-size: cover;
+}
+
+main {
+    height: 100%;
+    display: grid;
+    grid-template: repeat(2,.2fr) .3fr 10px 1fr .5fr 1fr .5fr / .5fr 2fr 2fr .5fr;
+}
+
+.left_Half {
+    grid-area: 5/2 / 7/3;
+    display: grid;
+    grid-template: subgrid / subgrid;
+    color: hsl(0,0%,100%);
+}
+
+.left_Half > h1 {
+    grid-area: 1/1 / 2/2;
+    font-size: 5em;
+    margin: 0;
+}
+
+.left_Half > p {
+    grid-area: 2/1 / 3/2;
+    font-size: 1.5em;
+}
+
+aside {
+    grid-area: 3/3 / 4/4;
+    background-color: hsl(248, 32%, 49%);
+    color: white;
+
+    width: 90%;
+    height: 80%;
+    place-self: center;
+}
+
+aside > div > p { 
+    font-weight: 300;
+    text-align: center;
+ }
+
+ .ad {
+    display: flex;
+    place-content: center;
+    height: 100%;
+    place-items: center;
+    align-self: auto;
+ }
+
+.right_Half {
+    grid-area: 5/3 / 8/4;
+    background-color: hsl(0,0%,100%);
+    width: 90%;
+    height: 80%;
+}
+
+.right_Half > form > button {
+    background-color: hsl(154, 59%, 51%);
+    color: hsl(0, 0%, 100%);
+}
+
+.form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    padding: 3% 0 0 0;
+    
+}
+
+.form > div > p {
+    font-size: x-small;
+    text-align: center;
+}
+
+input, button {
+    height: 12%;
+    width: 80%;
+    place-self: center;
+    border-radius: 10px;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+input::placeholder {
+    margin-left: 10%;
+}
+
+button {
+    font-size: 1em;
+    font-family: inherit;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+
+.bold { font-weight: bold; }
+.red {color:hsl(0, 100%, 74%) }
+
+.place_Center { place-self: center; }
+.round_Corner { border-radius:10px; }
+.upperCase { text-transform: uppercase;}
+.shadow { box-shadow: 0 9px 0 hsl(0, 71%, 66%);}
