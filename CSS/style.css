@@ -87,11 +87,9 @@ aside > div > p {
 
 .form {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 3%;
-    padding: 3% 0 0 0;
-    
+    display: grid;
+    grid-template: repeat(5, 1fr .2fr)/ 1fr;
+    padding: 6% 0 0 0;
     position: relative;
 }
 
@@ -100,8 +98,12 @@ aside > div > p {
     text-align: center;
 }
 
+.form > label {
+    position: absolute;
+}
+
 .input_Wrap {
-    height: 12%;
+    height: 75%;
     width: 85%;
     place-self: center;
     position: relative;
@@ -110,13 +112,25 @@ aside > div > p {
 input {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 8px;
     border: 1px solid hsl(246, 25%, 77%);
 
     font-size: medium;
     font-family: inherit;
     outline: none;
 }
+
+.grid_One { grid-area: 1/1 / 2/2;}
+    .span_One { grid-area: 2/1 / 3/2;}
+.grid_Two { grid-area: 3/1 / 4/2;}
+    .span_Two { grid-area: 4/1 / 5/2;}
+.grid_THree { grid-area: 5/1 / 6/2;}
+    .span_Three { grid-area: 6/1 / 7/2;}
+.grid_Four { grid-area: 7/1 / 8/2;}
+    .span_Four {grid-area: 8/1 / 9/2;}
+.grid_Five { grid-area: 9/1 / 10/2;}
+.grid_Six { grid-area: 10/1 / 11/2;}
+
 
 .icon {
     content: url(/images/icon-error.svg);
@@ -135,7 +149,7 @@ button {
     font-family: inherit;
     letter-spacing: 3px;
     font-weight: 500;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .error {
@@ -156,7 +170,7 @@ button {
 .round_Corner { border-radius:10px; }
 .upperCase { text-transform: uppercase;}
 .shadow { box-shadow: 0 9px 0 hsl(0, 71%, 66%);}
-.off { display: none;}
+.off { visibility: hidden;}
 .terms {color: hsl(246, 25%, 77%)}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
@@ -165,6 +179,7 @@ button {
 
 @media screen and (max-width: 375px) {
     main {
+        height: unset;
         grid-template: .3fr .6fr .6fr .3fr .3fr 3fr / auto;
         place-content: center;
     }
@@ -181,14 +196,28 @@ button {
     .left_Half > h1 {
         font-size: 1.5em;
         width: 60%;
-        
+        place-self: inherit;
     }
 
     .left_Half > p {
         font-size: .9em;
         width: 80%;
         text-align: center;
+        place-self: inherit;
     }
+
+    button { 
+        font-size: medium;
+        letter-spacing: 1px;
+    }
+    
+    .terms {font-size: 50px;}
+    
+    input { font-size: small;}
+
+    .input_Wrap { height: 100%; }
+
+    .error { margin: 0 0 0 25%;}
 
     aside { grid-area: 5/1 / 6/2; }
 
@@ -199,4 +228,6 @@ button {
     .justify_End { justify-self: center; }
 
     footer { display: none};
+
+
 }
